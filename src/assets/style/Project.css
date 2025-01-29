@@ -1,0 +1,71 @@
+.wrapperProject {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+.project{
+    width: 100%;
+    height: 100%;
+}
+
+.projectDesc {
+    display: flex;
+    justify-content: center;
+}
+
+
+.projectDesc h1 {
+    font-family: dream;
+    color: rgb(211, 208, 208);
+    font-size: 72px;
+}
+
+.wrapperProjectList{
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+}
+.projectList {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-auto-rows: 150px;
+  gap: 10px;
+  padding: 10px;
+}
+
+.projectData {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.projectData img {
+   width: 100%;
+   height: 150px;
+   object-fit: cover;
+   filter: saturate(0.2);
+}
+
+
+.projectData:hover img {
+    filter: saturate(1);
+ }
+
+/* Responsive untuk layar kecil */
+@media (max-width: 768px) {
+    .projectList {
+     grid-template-columns: repeat(4,1fr);
+    }
+}
+
+@media (max-width: 480px) {
+    .projectList {
+        grid-template-columns: 1fr;
+    }
+}

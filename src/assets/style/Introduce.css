@@ -1,0 +1,178 @@
+.wrapperIntroduce {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+.introduce {}
+
+.introduceName {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 10;
+    position: relative;
+}
+
+
+.introduceName h1 {
+    font-family: dream;
+    color: rgb(211, 208, 208);
+    font-size: 72px;
+}
+
+.introduceDesc {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 10;
+    position: relative;
+}
+
+
+.introduceDesc h1 {
+    font-family: dream;
+    color: rgb(211, 208, 208);
+    font-size: 72px;
+}
+
+.introduceImage {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    border-radius: 50%;
+    position: relative;
+}
+
+.imgDavid {
+    width: 300px;
+    transition: filter 0.3s ease;
+    filter: invert(0.3);
+    z-index: 20;
+}
+
+/* Efek hover */
+.imgDavid:hover {
+    filter: invert(0);
+}
+
+.text {
+    height: 530px;
+    width: 530px;
+    bottom: 17%;
+    position: absolute;
+    animation: effect 8s linear infinite;
+}
+
+@keyframes effect {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+.text span {
+    position: absolute;
+    left: 50%;
+    transform-origin: 4px 265px;
+    font-family: moonrising;
+    text-transform: capitalize;
+    color: rgb(126, 96, 96);
+}
+
+
+@keyframes marquee {
+    0% {
+        transform: translate(0, 0);
+    }
+
+    100% {
+        transform: translate(-100%, 0);
+    }
+}
+
+
+.runningText {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+}
+
+
+
+.marquee {
+    margin: 0 auto;
+    white-space: nowrap;
+    overflow: hidden;
+    position: absolute;
+    top: -5%;
+    font-family: geosans;
+    width: 100%;
+    color: rgb(211, 208, 208);
+    font-size: 200px;
+    opacity: 0.4;
+}
+
+.marquee span {
+    display: inline-block;
+    padding-left: 100%;
+    animation: marquee 25s linear infinite;
+}
+
+.marquee span {
+    animation-delay: 2.5s;
+}
+
+.marquee2 {
+    margin: 0 auto;
+    white-space: nowrap;
+    overflow: hidden;
+    position: absolute;
+    top: 35%;
+    font-family: geosans;
+    width: 100%;
+    color: rgb(211, 208, 208);
+    font-size: 200px;
+    opacity: 0.4;
+}
+
+.marquee2 span {
+    display: inline-block;
+    padding-left: 100%;
+    animation: marquee 25s linear infinite;
+}
+
+.marquee2 span {
+    animation-delay: 1.5s;
+}
+
+
+.marquee3 {
+    margin: 0 auto;
+    white-space: nowrap;
+    overflow: hidden;
+    position: absolute;
+    top: 75%;
+    font-family: geosans;
+    width: 100%;
+    color: rgb(211, 208, 208);
+    font-size: 200px;
+    opacity: 0.4;
+}
+
+.marquee3 span {
+    display: inline-block;
+    padding-left: 100%;
+    animation: marquee 25s linear infinite;
+}
+
+.marquee3 span {
+    animation-delay: 0s;
+}
