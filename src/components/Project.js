@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useCallback } from "react";
 import "../assets/style/Project.css";
 import Tobacco from "../assets/photo/tobacco.png";
 import hpa from "../assets/photo/homepageAdmin.png";
@@ -13,9 +13,24 @@ import tfc from "../assets/photo/tfc.png"
 import nikahan1 from "../assets/photo/nikahan1.png"
 import nikahan2 from "../assets/photo/nikahan2.png"
 import nikahan3 from "../assets/photo/nikahan3.png"
-
+import websiteIkodora from "../assets/photo/websiteIkodora.png"
+import Particles, { initParticlesEngine } from "@tsparticles/react";
+import { loadSlim } from "@tsparticles/slim"; 
 const Project = () => {
     const [arrProject, setArrProject] = useState([]);
+    const [init, setInit] = useState(false);
+    useEffect(() => {
+        initParticlesEngine(async (engine) => {
+            await loadSlim(engine);
+        }).then(() => {
+            setInit(true);
+        });
+    }, []);
+
+    const particlesLoaded = (container) => {
+        console.log(container);
+    };
+
     useEffect(() => {
         var arrTemp = [];
         arrTemp.push({
@@ -132,10 +147,92 @@ const Project = () => {
             description: "Serverless website for donor and fundraiser.",
             lang: ["JavaScript", "React", "C#", "ASP.NET"],
         });
+        arrTemp.push({
+            name: "Company Profile 2",
+            image: websiteIkodora,
+            category: "website",
+            url: "https://portofolio-fl-2.vercel.app/",
+            description: "Serverless website for donor and fundraiser.",
+            lang: ["JavaScript", "React", "C#", "ASP.NET"],
+        });
         setArrProject(arrTemp);
     }, []);
 
     return (<div className="wrapperProject">
+        {init && <Particles
+            id="tsparticles"
+            particlesLoaded={particlesLoaded}
+            options={{
+                background: {
+                    color: {
+                        value: "#ffffff",
+                    },
+                },
+                fpsLimit: 120,
+                interactivity: {
+                    events: {
+                        onClick: {
+                            enable: true,
+                            mode: "push",
+                        },
+                        onHover: {
+                            enable: true,
+                            mode: "repulse",
+                        },
+                        resize: true,
+                    },
+                    modes: {
+                        push: {
+                            quantity: 4,
+                        },
+                        repulse: {
+                            distance: 200,
+                            duration: 0.4,
+                        },
+                    },
+                },
+                particles: {
+                    color: {
+                        value: "#fc0000",
+                    },
+                    links: {
+                        color: "#fc0000",
+                        distance: 150,
+                        enable: true,
+                        opacity: 0.5,
+                        width: 1,
+                    },
+                    move: {
+                        direction: "none",
+                        enable: true,
+                        outModes: {
+                            default: "bounce",
+                        },
+                        random: false,
+                        speed: 6,
+                        straight: false,
+                    },
+                    number: {
+                        density: {
+                            enable: true,
+                            area: 800,
+                        },
+                        value: 80,
+                    },
+                    opacity: {
+                        value: 0.5,
+                    },
+                    shape: {
+                        type: "circle",
+                    },
+                    size: {
+                        value: { min: 1, max: 5 },
+                    },
+                },
+                detectRetina: true,
+            }}
+        />
+        }
         <div className="project">
 
             <div className="projectDesc">
@@ -145,7 +242,7 @@ const Project = () => {
             <div className="wrapperProjectList">
                 <div className="projectList">
                     {arrProject.map((data, index) => (
-                        <div className="projectData">
+                        <div className="projectData" onClick={() => window.open(data.url, "_blank")}>
                             <img src={data.image} />
                         </div>
                     ))}
