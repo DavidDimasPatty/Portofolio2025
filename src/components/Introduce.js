@@ -33,7 +33,7 @@ const Introduce = () => {
                     <img src={foto} className="imgDavid"/>
                 </div>
                 <div className="introduceDesc">
-                    <h1>The Artist</h1>
+                    <h1>The Programmer</h1>
                 </div>
             </div>
             <p className="text" ref={textRef}></p>

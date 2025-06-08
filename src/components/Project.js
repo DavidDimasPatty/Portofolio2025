@@ -15,7 +15,7 @@ import nikahan2 from "../assets/photo/nikahan2.png"
 import nikahan3 from "../assets/photo/nikahan3.png"
 import websiteIkodora from "../assets/photo/websiteIkodora.png"
 import Particles, { initParticlesEngine } from "@tsparticles/react";
-import { loadSlim } from "@tsparticles/slim"; 
+import { loadSlim } from "@tsparticles/slim";
 const Project = () => {
     const [arrProject, setArrProject] = useState([]);
     const [init, setInit] = useState(false);
@@ -140,14 +140,6 @@ const Project = () => {
             lang: ["JavaScript", "React", "C#", "ASP.NET"],
         });
         arrTemp.push({
-            name: "Wedding Website 3",
-            image: nikahan3,
-            category: "website",
-            url: "https://github.com/DavidDimasPatty/Donation_Website",
-            description: "Serverless website for donor and fundraiser.",
-            lang: ["JavaScript", "React", "C#", "ASP.NET"],
-        });
-        arrTemp.push({
             name: "Company Profile 2",
             image: websiteIkodora,
             category: "website",
@@ -158,98 +150,100 @@ const Project = () => {
         setArrProject(arrTemp);
     }, []);
 
-    return (<div className="wrapperProject">
-        {init && <Particles
-            id="tsparticles"
-            particlesLoaded={particlesLoaded}
-            options={{
-                background: {
-                    color: {
-                        value: "#ffffff",
+    return (
+        <div className="wrapperProject">
+            {init && <Particles
+                id="tsparticles"
+                particlesLoaded={particlesLoaded}
+                options={{
+                    fullScreen: { enable: true },
+                    background: {
+                        color: {
+                            value: "#ffffff",
+                        },
                     },
-                },
-                fpsLimit: 120,
-                interactivity: {
-                    events: {
-                        onClick: {
+                    fpsLimit: 120,
+                    interactivity: {
+                        events: {
+                            onClick: {
+                                enable: true,
+                                mode: "push",
+                            },
+                            onHover: {
+                                enable: true,
+                                mode: "repulse",
+                            },
+                            resize: true,
+                        },
+                        modes: {
+                            push: {
+                                quantity: 4,
+                            },
+                            repulse: {
+                                distance: 200,
+                                duration: 0.4,
+                            },
+                        },
+                    },
+                    particles: {
+                        color: {
+                            value: "#fc0000",
+                        },
+                        links: {
+                            color: "#fc0000",
+                            distance: 150,
                             enable: true,
-                            mode: "push",
+                            opacity: 0.5,
+                            width: 1,
                         },
-                        onHover: {
+                        move: {
+                            direction: "none",
                             enable: true,
-                            mode: "repulse",
+                            outModes: {
+                                default: "bounce",
+                            },
+                            random: false,
+                            speed: 6,
+                            straight: false,
                         },
-                        resize: true,
-                    },
-                    modes: {
-                        push: {
-                            quantity: 4,
+                        number: {
+                            density: {
+                                enable: true,
+                                area: 800,
+                            },
+                            value: 80,
                         },
-                        repulse: {
-                            distance: 200,
-                            duration: 0.4,
+                        opacity: {
+                            value: 0.5,
+                        },
+                        shape: {
+                            type: "circle",
+                        },
+                        size: {
+                            value: { min: 1, max: 5 },
                         },
                     },
-                },
-                particles: {
-                    color: {
-                        value: "#fc0000",
-                    },
-                    links: {
-                        color: "#fc0000",
-                        distance: 150,
-                        enable: true,
-                        opacity: 0.5,
-                        width: 1,
-                    },
-                    move: {
-                        direction: "none",
-                        enable: true,
-                        outModes: {
-                            default: "bounce",
-                        },
-                        random: false,
-                        speed: 6,
-                        straight: false,
-                    },
-                    number: {
-                        density: {
-                            enable: true,
-                            area: 800,
-                        },
-                        value: 80,
-                    },
-                    opacity: {
-                        value: 0.5,
-                    },
-                    shape: {
-                        type: "circle",
-                    },
-                    size: {
-                        value: { min: 1, max: 5 },
-                    },
-                },
-                detectRetina: true,
-            }}
-        />
-        }
-        <div className="project">
+                    detectRetina: true,
+                }}
+            />
+            }
+            <div className="project">
 
-            <div className="projectDesc">
-                <h1>The Projects</h1>
-            </div>
+                <div className="projectDesc">
+                    <h1>The Projects</h1>
+                </div>
 
-            <div className="wrapperProjectList">
-                <div className="projectList">
-                    {arrProject.map((data, index) => (
-                        <div className="projectData" onClick={() => window.open(data.url, "_blank")}>
-                            <img src={data.image} />
-                        </div>
-                    ))}
+                <div className="wrapperProjectList">
+                    <div className="projectList">
+                        {arrProject.map((data, index) => (
+                            <div className="projectData" onClick={() => window.open(data.url, "_blank")}>
+                                <img src={data.image} />
+                            </div>
+                        ))}
+                    </div>
                 </div>
             </div>
-        </div>
-    </div>);
+        </div>);
 }
 
 

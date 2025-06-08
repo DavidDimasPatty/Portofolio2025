@@ -46,18 +46,24 @@
     overflow: hidden;
     border-radius: 50%;
     position: relative;
+    width: 1000px;
 }
 
 .imgDavid {
-    width: 300px;
+    position: relative;
+    width: 250px;
+    height: 400px;
     transition: filter 0.3s ease;
     filter: invert(0.3);
     z-index: 20;
+    top: 0px;
+    border-radius: 1000px;
+    border:1px solid darkred;
 }
 
 /* Efek hover */
 .imgDavid:hover {
-    filter: invert(0);
+    filter: invert(0) drop-shadow(0 0 2px #ff0000) saturate(3);
 }
 
 .text {
@@ -66,6 +72,7 @@
     bottom: 17%;
     position: absolute;
     animation: effect 8s linear infinite;
+    z-index: 10;
 }
 
 @keyframes effect {
@@ -115,9 +122,10 @@
     top: -5%;
     font-family: geosans;
     width: 100%;
-    color: rgb(211, 208, 208);
+    color: rgb(188, 157, 157);
     font-size: 200px;
     opacity: 0.4;
+    z-index: 10;
 }
 
 .marquee span {
@@ -138,9 +146,10 @@
     top: 35%;
     font-family: geosans;
     width: 100%;
-    color: rgb(211, 208, 208);
+    color: rgb(123, 104, 104);
     font-size: 200px;
     opacity: 0.4;
+    z-index: 10;
 }
 
 .marquee2 span {
@@ -165,6 +174,7 @@
     color: rgb(211, 208, 208);
     font-size: 200px;
     opacity: 0.4;
+    z-index: 10;
 }
 
 .marquee3 span {
