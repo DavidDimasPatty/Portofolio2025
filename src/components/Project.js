@@ -39,7 +39,7 @@ const Project = () => {
             category: "website",
             url: "https://tobacco.vercel.app/",
             description: "Tobacco market place. Provide buying products for users.",
-            lang: ["JavaScript", "React", "Mongo DB"],
+            lang: ["JavaScript", "React", "Mongo DB","C#"],
         });
         arrTemp.push({
             name: "Pelayanan Imam Katolik",
@@ -177,7 +177,7 @@ const Project = () => {
                         },
                         modes: {
                             push: {
-                                quantity: 4,
+                                quantity: 10,
                             },
                             repulse: {
                                 distance: 200,
@@ -211,7 +211,7 @@ const Project = () => {
                                 enable: true,
                                 area: 800,
                             },
-                            value: 80,
+                            value: 130,
                         },
                         opacity: {
                             value: 0.5,
@@ -238,6 +238,23 @@ const Project = () => {
                         {arrProject.map((data, index) => (
                             <div className="projectData" onClick={() => window.open(data.url, "_blank")}>
                                 <img src={data.image} />
+                                <div className="boxDesc">
+                                    <div className="wrapperBoxProject">
+                                        <div className="wrapperBoxTittleProject">
+                                            <h1>{data.name}</h1>
+                                        </div>
+                                        <div className="wrapperBoxDescProject">
+                                            {data.description}
+                                        </div>
+                                        <div className="langWrap">
+                                            {data.lang.map((lang, index) => (
+                                                <div key={index} className="langBox">
+                                                   {lang}
+                                                </div>
+                                            ))}
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
                         ))}
                     </div>

@@ -30,13 +30,14 @@ const Introduce = () => {
                     <h1>David Dimas Patty</h1>
                 </div>
                 <div className="introduceImage">
-                    <img src={foto} className="imgDavid"/>
+                    <img src={foto} className="imgDavid" />
                 </div>
                 <div className="introduceDesc">
                     <h1>The Programmer</h1>
                 </div>
+                <p className="text" ref={textRef}></p>
             </div>
-            <p className="text" ref={textRef}></p>
+
         </div>
     );
 }

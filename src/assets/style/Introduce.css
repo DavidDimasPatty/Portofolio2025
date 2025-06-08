@@ -7,7 +7,9 @@
     position: relative;
 }
 
-.introduce {}
+.introduce {
+    position: relative;
+}
 
 .introduceName {
     display: flex;
@@ -15,6 +17,7 @@
     align-items: center;
     z-index: 10;
     position: relative;
+    top: -20px;
 }
 
 
@@ -62,17 +65,37 @@
 }
 
 /* Efek hover */
-.imgDavid:hover {
+
+/* .imgDavid:hover {
     filter: invert(0) drop-shadow(0 0 2px #ff0000) saturate(3);
+}
+
+.imgDavid:hover h1 {
+  color: darkred;
+} */
+
+
+.introduce:hover .introduceName h1,
+.introduce:hover .introduceDesc h1,
+.introduce:hover .text span  {
+  color: darkred;
+}
+
+
+.introduce:hover .imgDavid {
+    filter: invert(0) drop-shadow(0 0 2px #ff0000) saturate(1.5);
+  transition: all 0.3s ease;
 }
 
 .text {
     height: 530px;
     width: 530px;
-    bottom: 17%;
+    bottom: 13%;
     position: absolute;
     animation: effect 8s linear infinite;
     z-index: 10;
+    left: 23%;
+
 }
 
 @keyframes effect {
